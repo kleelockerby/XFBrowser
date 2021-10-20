@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Net.Http;
-using System.Net.Http.Json;
 using OneStream.Shared.Common;
 using OneStream.Shared.Wcf;
 using OneStreamWebUI.Shared;
@@ -12,9 +11,9 @@ namespace XFBrowser.Shared
     {
         private HttpClient Http;
 
-        public LogonDataAccess(HttpClient httpClient)
+        public LogonDataAccess()
         {
-            this.Http = httpClient;
+            this.Http = new HttpClient();
         }
 
         public async Task<XFLogonResponseDto> LogonUserAsync(string userName, string password, string selectedApplicationName)
