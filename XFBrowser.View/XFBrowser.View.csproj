@@ -41,14 +41,6 @@
     <Reference Include="DevExpress.Sparkline.v21.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v21.1" />
     <Reference Include="DevExpress.Printing.v21.1.Core" />
-    <Reference Include="OneStream.SharedWcfContract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\XF\Source\Client\Web\OneStreamWebUI\Client\bin\Debug\net6.0\wwwroot\_framework\OneStream.SharedWcfContract.dll</HintPath>
-    </Reference>
-    <Reference Include="OneStreamWebUI.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\XF\Source\Client\Web\OneStreamWebUI\Client\bin\Debug\net6.0\wwwroot\_framework\OneStreamWebUI.Shared.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

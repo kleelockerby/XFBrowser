@@ -39,7 +39,6 @@ namespace XFBrowser.View
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnLogon = new DevExpress.XtraEditors.SimpleButton();
             this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
-            this.lblResult = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboApplications.Properties)).BeginInit();
@@ -132,19 +131,11 @@ namespace XFBrowser.View
             this.mvvmContext.ContainerControl = this;
             this.mvvmContext.ViewModelType = typeof(XFBrowser.View.LogonFormViewModel);
             // 
-            // lblResult
-            // 
-            this.lblResult.Location = new System.Drawing.Point(90, 24);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(0, 13);
-            this.lblResult.TabIndex = 3;
-            // 
             // LogonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 360);
-            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnLogon);
             this.Controls.Add(this.tablePanel1);
             this.Name = "LogonForm";
@@ -157,7 +148,6 @@ namespace XFBrowser.View
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -172,6 +162,5 @@ namespace XFBrowser.View
         private DevExpress.XtraEditors.TextEdit txtUserName;
         private DevExpress.XtraEditors.SimpleButton btnLogon;
         private DevExpress.Utils.MVVM.MVVMContext mvvmContext;
-        private DevExpress.XtraEditors.LabelControl lblResult;
     }
 }
