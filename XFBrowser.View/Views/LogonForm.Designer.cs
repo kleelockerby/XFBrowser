@@ -1,5 +1,5 @@
 ﻿
-namespace XFBrowser
+namespace XFBrowser.View
 {
     partial class LogonForm
     {
@@ -129,7 +129,7 @@ namespace XFBrowser
             // mvvmContext
             // 
             this.mvvmContext.ContainerControl = this;
-            this.mvvmContext.ViewModelType = typeof(XFBrowser.LogonFormViewModel);
+            this.mvvmContext.ViewModelType = typeof(XFBrowser.View.LogonFormViewModel);
             // 
             // LogonForm
             // 

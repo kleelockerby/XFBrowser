@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace XFBrowser.Properties
+namespace XFBrowser.View.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -43,7 +43,7 @@ namespace XFBrowser.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XFBrowser.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XFBrowser.View.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XFBrowser.Shared", "XFBrows
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XFBrowser5", "XFBrowser5\XFBrowser5.csproj", "{570F3A5E-F427-48FE-BA29-16178368A97D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFBrowser", "XFBrowser\XFBrowser.csproj", "{8A0317F5-D37D-4F40-A226-56E1B31CB15B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFBrowser.View", "XFBrowser.View\XFBrowser.View.csproj", "{99312CA3-3862-4423-8B66-553FC6EDB91E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{570F3A5E-F427-48FE-BA29-16178368A97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{570F3A5E-F427-48FE-BA29-16178368A97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{570F3A5E-F427-48FE-BA29-16178368A97D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A0317F5-D37D-4F40-A226-56E1B31CB15B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A0317F5-D37D-4F40-A226-56E1B31CB15B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A0317F5-D37D-4F40-A226-56E1B31CB15B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A0317F5-D37D-4F40-A226-56E1B31CB15B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99312CA3-3862-4423-8B66-553FC6EDB91E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99312CA3-3862-4423-8B66-553FC6EDB91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99312CA3-3862-4423-8B66-553FC6EDB91E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99312CA3-3862-4423-8B66-553FC6EDB91E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
