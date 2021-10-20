@@ -98,12 +98,6 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XFBrowser.Shared\XFBrowser.Shared.csproj">
-      <Project>{ee3abe21-4039-463e-9b6a-1fc1290a8da0}</Project>
-      <Name>XFBrowser.Shared</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
