@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace XFBrowser.View
+namespace XFBrowserToolkit
 {
     static class Program
     {
@@ -18,7 +18,7 @@ namespace XFBrowser.View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogonForm());
+            Application.Run(new MainForm());
         }
     }
 }

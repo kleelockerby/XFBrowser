@@ -28,7 +28,9 @@ namespace XFBrowser5
             LogonFormViewModel viewModel = mvvmContext.GetViewModel<LogonFormViewModel>();
             txtUserName.DataBindings.Add("EditValue", viewModel, "UserName");
             txtPassword.DataBindings.Add("EditValue", viewModel, "Password");
+            lblResult.DataBindings.Add("Text", viewModel, "Result");
             btnLogon.BindCommand(new DelegateCommand(() => { viewModel.LogonUser(); }));
+            //btnLogon.BindCommand(new DelegateCommand(() => { viewModel.DoSomething(); }));
         }
     }
 }

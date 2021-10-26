@@ -23,6 +23,9 @@ namespace XFBrowser.Shared
                 case "MarketPlace":
                     selectedApplicationId = "290f545a-44fc-4e01-b0aa-ea2d322825a9";
                     break;
+                case "MarketPlace_SS":
+                    selectedApplicationId = "290f545a-44fc-4e01-b0aa-ea2d322825a7";
+                    break;
                 case "OneStream_KL":
                     selectedApplicationId = "cde8be57-5274-4812-9b3e-9034292ffc69";
                     break;
