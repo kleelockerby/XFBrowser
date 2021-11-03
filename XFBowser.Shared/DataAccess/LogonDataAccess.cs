@@ -8,16 +8,16 @@ using OneStreamWebUI.Shared;
 
 namespace XFBrowser.Shared
 {
-    public class LogonDataAccess
+    public static class LogonDataAccess
     {
-        private HttpClient Http;
+        private static HttpClient Http;
 
-        public LogonDataAccess(HttpClient httpClient)
+        static LogonDataAccess()
         {
-            this.Http = httpClient;
+            Http = new HttpClient();
         }
 
-        public async Task<XFLogonResponseDto> LogonUserAsync(string userName, string password, string selectedApplicationName)
+        public static async Task<XFLogonResponseDto> LogonUserAsync(string userName, string password, string selectedApplicationName)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace XFBrowser.Shared
                 logonModel.PasswordOrToken = password;
                 logonModel.SelectedApplication = selectedApplication;
 
-                HttpResponseMessage responseMessage = await this.Http?.PostAsJsonAsync<XFLogonRequestDto>(XFWebGeneralConstants.LogonUrl, logonModel);
+                HttpResponseMessage responseMessage = await Http?.PostAsJsonAsync<XFLogonRequestDto>(XFWebGeneralConstants.LogonUrl, logonModel);
                 if (responseMessage != null && responseMessage.IsSuccessStatusCode)
                 {
                     XFLogonResponseDto logonResponseDto = await responseMessage?.Content?.ReadFromJsonAsync<XFLogonResponseDto>();
@@ -41,6 +41,56 @@ namespace XFBrowser.Shared
             }
             catch (Exception ex)
             {
+                throw new XFException(ex);
+            }
+        }
+
+        public static async Task<XFApplicationsResponseDto> GetApplicationsAsync(SessionInfo si)
+        {
+            try
+            {
+                XFBaseSiRequestDto siDto = new XFBaseSiRequestDto(si);
+                HttpResponseMessage responseMessage = await Http?.PostAsJsonAsync<XFBaseSiRequestDto>(XFWebGeneralConstants.GetApplicationsUrl, siDto);
+                if (responseMessage != null && responseMessage.IsSuccessStatusCode)
+                {
+                    XFApplicationsResponseDto applicationsResponseDto = await responseMessage?.Content?.ReadFromJsonAsync<XFApplicationsResponseDto>();
+                    if ((applicationsResponseDto != null) && (applicationsResponseDto?.Applications?.Count > 0))
+                    {
+                        return applicationsResponseDto;
+                    }
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+
+                throw new XFException(ex);
+            }
+        }
+
+        public static async Task<XFOpenApplicationResponseDto> OpenApplicationAsync(SessionInfo si, string selectedApplicationName)
+        {
+            try
+            {
+                XFOpenApplicationRequestDto openApplicationRequestDto = new XFOpenApplicationRequestDto(si, selectedApplicationName, null);
+                HttpResponseMessage responseMessage = await Http?.PostAsJsonAsync<XFOpenApplicationRequestDto>(XFWebGeneralConstants.OpenApplicationUrl, openApplicationRequestDto);
+                if (responseMessage != null && responseMessage.IsSuccessStatusCode)
+                {
+                    var jsonSerializerOptions = new System.Text.Json.JsonSerializerOptions();
+                    jsonSerializerOptions.Converters.Add(new JsonNonStringKeyDictionaryConverter());
+                    jsonSerializerOptions.Converters.Add(new WorkflowInfoCallbacksConverter());
+
+                    XFOpenApplicationResponseDto openApplicationResponseDto = await responseMessage.Content?.ReadFromJsonAsync<XFOpenApplicationResponseDto>(jsonSerializerOptions);
+                    if (openApplicationResponseDto != null)
+                    {
+                        return openApplicationResponseDto;
+                    }
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+
                 throw new XFException(ex);
             }
         }

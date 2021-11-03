@@ -45,7 +45,9 @@ namespace XFBrowser5
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -179,6 +181,11 @@ namespace XFBrowser5
             this.barSubItem3.Id = 2;
             this.barSubItem3.Name = "barSubItem3";
             // 
+            // mvvmContext
+            // 
+            this.mvvmContext.ContainerControl = this;
+            this.mvvmContext.ViewModelType = typeof(XFBrowser5.MainFormViewModel);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +198,7 @@ namespace XFBrowser5
             this.Name = "MainForm";
             this.Text = "XFBrowser";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,6 +220,7 @@ namespace XFBrowser5
         private DevExpress.XtraBars.BarSubItem barSubItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.Utils.MVVM.MVVMContext mvvmContext;
     }
 }
 

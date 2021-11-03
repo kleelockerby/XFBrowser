@@ -14,25 +14,19 @@ namespace XFBrowser5
 {
     public partial class LogonForm : XtraForm
     {
+        private LogonFormViewModel logonFormViewModel;
+
         public LogonForm()
         {
             InitializeComponent();
+
+            logonFormViewModel = new LogonFormViewModel();
+            
+
             if (!mvvmContext.IsDesignMode)
             {
-                //InitializeBindings();
                 InitializeBindingsFluent();
             }
-        }
-
-        public void InitializeBindings()
-        {
-            LogonFormViewModel viewModel = mvvmContext.GetViewModel<LogonFormViewModel>();
-            
-            txtUserName.DataBindings.Add("EditValue", viewModel, "UserName");
-            txtPassword.DataBindings.Add("EditValue", viewModel, "Password");
-            lblResult.DataBindings.Add("Text", viewModel, "Result");
-            
-            btnLogon.BindCommand(new DelegateCommand(() => { viewModel.LogonUser(); }));
         }
 
         public void InitializeBindingsFluent()
@@ -41,9 +35,19 @@ namespace XFBrowser5
             
             fluent.SetBinding(txtUserName, ed => ed.EditValue, x => x.UserName);
             fluent.SetBinding(txtPassword, ed => ed.EditValue, x => x.Password);
-            fluent.SetBinding(lblResult, l => l.Text, x => x.Result);
+            fluent.SetBinding(lblResult, l => l.Text, x => x.LogonResult);
+
+            fluent.SetBinding(cboApplications, cbo => cbo.SelectedItem, x => x.SelectedApplication);
 
             fluent.BindCommand(btnLogon, x => x.LogonUser);
         }
+
+       /* private void Logon_OnLogonCompleted(EventArgs e)
+        {
+            foreach (string item in mvvmContext.GetViewModel<LogonFormViewModel>().LookupApplicationNames)
+            {
+                cboApplications.Properties.Items.Add(item);
+            }
+        }*/
     }
 }

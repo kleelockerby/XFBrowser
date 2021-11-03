@@ -138,7 +138,7 @@ namespace XFBrowser5
             this.lblResult.Location = new System.Drawing.Point(148, 13);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(0, 13);
-            this.lblResult.TabIndex = 3;
+            this.lblResult.TabIndex = 3; 
             // 
             // LogonForm
             // 
